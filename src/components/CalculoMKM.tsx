@@ -22,8 +22,6 @@ const ICMS_12 = ["PR", "RS", "SC", "SP", "RJ", "MG"] as const;
 const ICMS_7 = UF_ALL.filter((uf) => !(ICMS_12 as readonly string[]).includes(uf)) as readonly string[];
 
 // 4%: usually for imported goods (when applicable). We'll show as a helper group.
-const ICMS_4 = ["(Imported goods rule)"] as const;
-
 // Accepts: "148,23" "148.23" "R$ 1.234,56" "1 234,56"
 function parseBR(v: string): number {
   const cleaned = (v ?? "")
